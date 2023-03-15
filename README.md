@@ -1,6 +1,6 @@
 # SVG Logo Maker
 
-## Your Task
+
 
 # README-Generator
 
