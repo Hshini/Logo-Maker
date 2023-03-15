@@ -3,9 +3,17 @@ const { Triangle, Circle, Square } = require('./Lib/shapes')
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-function createFile() {
+// Create File
+function createFile(data) {
+  fs.writeFile('./examples/file.svg', data, (error) => {
+    if (error) {
+      console.log(error)
+    }
 
+    console.log("File created succesfuly");
+  })
 }
+// User Input
 inquirer
   .prompt([
     {
@@ -33,44 +41,25 @@ inquirer
   .then((answers) => {
     const { title, textColor, shape, shapeColor } = answers;
     console.log(answers)
-    let triangle,circle,square;
+    let triangle,circle,square,userInp;
+
     if (shape == 'Triangle') {
       triangle = new Triangle(title, textColor, shapeColor);
-
-      fs.writeFile('file.svg', triangle.render(), (error) => {
-        if (error) {
-          console.log(error)
-        }
-
-        console.log("File created succesfuly");
-      })
+      userInp=triangle.render();
+      createFile(userInp)
     }
 
     if (shape == 'Circle') {
-       circle = new Circle(title, textColor, shapeColor)
-
-      fs.writeFile('file.svg', circle.render(), (error) => {
-        if (error) {
-          console.log(error)
-        }
-
-        console.log("File created succesfuly");
-      })
+      circle = new Circle(title, textColor, shapeColor)
+      userInp = circle.render();
+      createFile(userInp);
     }
 
     if (shape == 'Square') {
-       square = new Square(title, textColor, shapeColor)
-      fs.writeFile('file.svg', square.render(), (error) => {
-        if (error) {
-          console.log(error)
-        }
-
-        console.log("File created succesfuly");
-      })
+      square = new Square(title, textColor, shapeColor)
+      userInp = square.render();
+      createFile(userInp);
     }
-
-
-
   })
   .catch((error) => {
 
