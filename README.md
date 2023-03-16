@@ -6,7 +6,7 @@ This app will help anyone to create fast and free logo.
 This Logo-Maker requires node.js, and npm inquirer
 In order to install Inquirer,<br>
 please use npm i inquirer@8.2.4.<br>
-[Video-Guide](https://watch.screencastify.com/v/m0oWvfFzEGHP4qA3XBk5)
+[Video-Guide](https://watch.screencastify.com/v/XjHuSIBMZr5FLE2ckMME)
 
 ## Usage 
 Clone the  repo in your pc.<br>
